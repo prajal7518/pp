@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Projects</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Main container spacing */
+        .container {
+            padding: 30px 15px;
+        }
+        
+        /* Section title styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: bold;
+            color: #006400;
+            font-size: 2.5rem;
+            padding: 10px 0;
+        }
+        .section-title .underline {
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            text-decoration-thickness: 3px;
+            text-decoration-color: #006400;
+        }
+        
+        /* Filter buttons styling */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+        .filter-btn {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin: 0 10px 10px;
+            font-size: 14px;
+            border: 1px solid #e0e0e0;
+            background-color: white;
+            color: #333;
+            transition: all 0.3s;
+        }
+        .filter-btn.active {
+            background-color: #00a63f;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 166, 63, 0.3);
+        }
+        
+        /* Row spacing */
+        .row {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+        
+        /* Column padding */
+        .col-lg-3, .col-md-6, .col-sm-12 {
+            padding: 0 20px;
+            margin-bottom: 40px;
+        }
+        
+        /* Project card styling */
+        .project-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            height: 100%;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .project-category {
+            color: #007bff;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .project-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+        
+        .project-desc {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .view-project {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            padding-top: 5px;
+        }
+        
+        .view-project:hover {
+            text-decoration: underline;
+        }
+        
+        .arrow-icon {
+            margin-left: 8px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 40px;
+            }
+            
+            .col-lg-3, .col-md-6, .col-sm-12 {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            
+            .filter-btn {
+                margin: 0 5px 10px;
+                padding: 8px 20px;
+            }
+            
+            .card-body {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            
+            .filter-container {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="section-title">Check out some <span class="underline">of Our</span> recent projects</h1>
+        
+        <div class="filter-container">
+            <button class="filter-btn">All</button>
+            <button class="filter-btn">Web Design</button>
+            <button class="filter-btn active">App Development</button>
+            <button class="filter-btn">E-Commerce</button>
+            <button class="filter-btn">Channel</button>
+        </div>
+
+        <div class="row">
+            <!-- App Development Cards -->
+            <!-- Project Card 1 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="images/11.avif" alt="BhoomiThe Real Estate" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">App Development</div>
+                        <h3 class="project-title">BhoomiThe Real Estate</h3>
+                        <p class="project-desc">We developed With smart search filters, you can narrow results by budget, property type, size, and location preferences. The app also features real-time notifications for new listings, price drops, and open house events.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 2 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Jobsworld" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">App Development</div>
+                        <h3 class="project-title">Jobsworld</h3>
+                        <p class="project-desc">A user-friendly Jobseeker App is a comprehensive platform designed to simplify the job search process and connect candidates with the right career opportunities.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 3 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Delhi Parcel" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">App Development</div>
+                        <h3 class="project-title">Delhi Parcel</h3>
+                        <p class="project-desc">A user-friendly apps streamline logistics by connecting customers with local delivery partners or courier services. Key features include real-time parcel tracking, pickup and delivery scheduling</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 4 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Ledger Book" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">App Development</div>
+                        <h3 class="project-title">Ledger Book</h3>
+                        <p class="project-desc">We design and develop customized Ledger Book applications to help small businesses and shop owners manage their customer credit, daily transactions, and payment records with ease.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5 - Additional App Development -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Fitness Tracker" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">App Development</div>
+                        <h3 class="project-title">Fitness Tracker</h3>
+                        <p class="project-desc">A comprehensive fitness tracking application that monitors workouts, nutrition, and health metrics. Features include workout plans, progress charts, and social sharing capabilities.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Web Design Cards -->
+            <!-- Project Card 6 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Portfolio Website" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-desc">We created a beautiful portfolio website with responsive design, smooth animations, and an intuitive user interface that showcases the client's work and achievements effectively.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 7 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Corporate Website" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">Corporate Website</h3>
+                        <p class="project-desc">A professional corporate website with modern design elements, optimized for both desktop and mobile devices. Includes contact forms, team profiles, and service descriptions.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 8 - Additional Web Design -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Restaurant Website" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">Restaurant Website</h3>
+                        <p class="project-desc">An elegant website for a fine dining restaurant featuring menu displays, reservation system, chef profiles, and beautiful gallery showcasing the restaurant's ambiance and dishes.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- E-Commerce Cards -->
+            <!-- Project Card 9 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Fashion Boutique" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">E-Commerce</div>
+                        <h3 class="project-title">Fashion Boutique</h3>
+                        <p class="project-desc">We developed a full-featured e-commerce platform with product catalog, secure payment integration, inventory management, and customer accounts for a fashion boutique.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 10 - Additional E-Commerce -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Electronics Store" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">E-Commerce</div>
+                        <h3 class="project-title">Electronics Store</h3>
+                        <p class="project-desc">A high-performance e-commerce store for electronics with advanced filtering, product comparisons, customer reviews, and streamlined checkout process to enhance user experience.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Channel Cards -->
+            <!-- Project Card 11 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Tech Tips Channel" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">Channel</div>
+                        <h3 class="project-title">Tech Tips Channel</h3>
+                        <p class="project-desc">We designed and managed a YouTube channel for tech tutorials and reviews, creating engaging content, optimizing for SEO, and growing subscriber base through strategic promotion.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 12 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Marketing Hub" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">Channel</div>
+                        <h3 class="project-title">Marketing Hub</h3>
+                        <p class="project-desc">We created a comprehensive marketing channel with email campaigns, social media management, and content strategy to help businesses reach their target audience effectively.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Filter Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all filter buttons
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            // Set initial active state
+            const appDevButton = Array.from(filterButtons).find(btn => btn.textContent.trim() === 'App Development');
+            if (appDevButton) {
+                appDevButton.classList.add('active');
+                filterProjects('App Development');
+            }
+            
+            // Add click event to each filter button
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.textContent.trim();
+                    
+                    // Filter projects
+                    filterProjects(filterValue);
+                });
+            });
+            
+            // Function to filter projects
+            function filterProjects(filterValue) {
+                // Get all project cards
+                const projectCards = document.querySelectorAll('.project-card');
+                
+                projectCards.forEach(card => {
+                    const parent = card.closest('.col-lg-4');
+                    const category = card.querySelector('.project-category').textContent.trim();
+                    
+                    if (filterValue === 'All' || filterValue === category) {
+                        parent.style.display = 'block';
+                    } else {
+                        parent.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Initial filtering - show App Development by default
+            filterProjects('App Development');
+        });
+    </script>
+</body>
+</html>

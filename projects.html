@@ -1,0 +1,853 @@
+﻿    <!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="Awaiken">
+	<!-- Page Title -->
+    <title>Project</title>
+	<!-- Favicon Icon -->
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png"> -->
+	<!-- Google Fonts Css-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="../css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+	<!-- Bootstrap Css -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- SlickNav Css -->
+	<link href="css/slicknav.min.css" rel="stylesheet">
+	<!-- Swiper Css -->
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<!-- Font Awesome Icon Css-->
+	<link href="css/all.min.css" rel="stylesheet" media="screen">
+	<!-- Animated Css -->
+	<link href="css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Mouse Cursor Css File -->
+	<!-- <link rel="stylesheet" href="css/mousecursor.css"> -->
+	<!-- Main Custom Css -->
+	<link href="css/custom.css" rel="stylesheet" media="screen">
+     <!-- Bootstrap CSS -->
+     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"> -->
+     <!-- Font Awesome for icons -->
+     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"> -->
+    <style>
+        /* Main container spacing */
+        .cn {
+            padding: 30px 15px;
+        }
+        
+        /* Section title styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: bold;
+            color: #006400;
+            font-size: 3rem;
+            padding: 10px 0;
+        }
+        .section-title .underline {
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            text-decoration-thickness: 3px;
+            text-decoration-color: #006400;
+        }
+        
+        /* Filter buttons styling */
+        .filter-cn {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+        .filter-btn {
+            border-radius: 30px;
+            padding: 14px 25px;
+            margin: 0 10px 10px;
+            font-size: 18px;
+            border: 1px solid #e0e0e0;
+            background-color: white;
+            color: #333;
+            transition: all 0.3s;
+        }
+        .filter-btn.active {
+            background-color: #078812;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 166, 63, 0.3);
+        }
+        
+        /* Row spacing */
+        .row {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+        
+        /* Column padding */
+        .col-lg-3, .col-md-6, .col-sm-12 {
+            padding: 0 20px;
+            margin-bottom: 40px;
+        }
+        
+        /* Project card styling */
+        .project-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            height: 100%;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .project-category {
+            color: #007bff;
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .project-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .project-desc {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .view-project {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 17px;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+            padding-top: 5px;
+        }
+        
+        .view-project:hover {
+            text-decoration: underline;
+        }
+        
+        .arrow-icon {
+            margin-left: 8px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 40px;
+            }
+            
+            .col-lg-3, .col-md-6, .col-sm-12 {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            
+            .filter-btn {
+                margin: 0 5px 10px;
+                padding: 8px 20px;
+            }
+            
+            .card-body {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .cn {
+                padding: 20px 10px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            
+            .filter-cn {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   <!-- Preloader Start -->
+	<div class="preloader">
+		<div class="loading-container">
+			<div class="loading"></div>
+			<div id="loading-icon"><img src="images/6786f6bb-39fb-467c-ac73-2af12742e326-removebg-preview (2).png" alt=""></div>
+		</div>
+	</div>
+	<!-- Preloader End -->
+
+    <!-- Topbar Section Start -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="topbar-info-text">
+                        <p>Empowering Your Business with Smart IT Solutions <a href="contact.html">Contact now</a></p>
+                    </div>
+                </div>
+                
+                <div class="col-md-5">
+                    <!-- Topbar Social Links Start -->
+                    <div class="topbar-links">
+                        <!-- Topbar Contact Information Start -->
+                        <div class="topbar-contact-info">
+                            <ul>
+                                <li><a href="about.html">Help</a></li>
+                                <li><a href="services.html">Support</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- Topbar Contact Information End -->
+
+                        <!-- Topbar Social Links Start -->
+                        <div class="topbar-social-links">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- Topbar Social Links End -->
+                    </div>
+                    <!-- Topbar Social Links End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar Section End -->
+
+    <!-- Header Start -->
+	<header class="main-header">
+		<div class="header-sticky">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container">
+					<!-- Logo Start -->
+					<a class="navbar-brand" href="index-video.html">
+						<img src="images/logo-removebg-preview (3).webp" style="width: 200px;" alt="Logo">
+					</a>
+					<!-- Logo End -->
+
+					<!-- Main Menu Start -->
+					<div class="collapse navbar-collapse main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul class="navbar-nav mr-auto" id="menu">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a>
+                                    <!-- <ul>
+                                        <li class="nav-item"><a class="nav-link" href="index.html">Home - Image</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="index-video.html">Home - Video</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="index-slider.html">Home - Slider</a></li>
+                                    </ul> -->
+                                </li>                                
+                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a>
+                                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="projects.html">Project</a></li>
+                                <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
+                                    <ul>                                        
+                                        <li class="nav-item"><a class="nav-link" href="service-single.html">Service Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
+                                        <!-- <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li> -->
+                                        <li class="nav-item"><a class="nav-link" href="project-single.html">Project Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+                                        <!-- <li class="nav-item"><a class="nav-link" href="team-single.html">Team Details</a></li> -->
+                                        <!-- <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li> -->
+                                        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="image-gallery.html">Image Gallery</a></li>
+                                        <!-- <li class="nav-item"><a class="nav-link" href="video-gallery.html">Video Gallery</a></li> -->
+                                        <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+                                        <!-- <li class="nav-item"><a class="nav-link" href="404.html">404</a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>                         
+                            </ul>
+                        </div>
+
+                        <!-- Header Btn Start -->
+                        <div class="header-btn">
+                            <a href="contact.html" class="btn-default">get started</a>
+                        </div>
+                        <!-- Header Btn End -->
+					</div>
+					<!-- Main Menu End -->
+					<div class="navbar-toggle"></div>
+				</div>
+			</nav>
+			<div class="responsive-menu"></div>
+		</div>
+	</header>
+	<!-- Header End -->
+
+
+    <!-- Page Header Start -->
+    <div class="page-header parallaxie" style="background-image: url('images/project-management-concept-professional-manager-260nw-2206501341.webp');">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <!-- Page Header Box Start -->
+                    <div class="page-header-box">
+                        <h1 class="wow fadeInUp" data-cursor="-opaque">Our projects</h1>
+                        <nav class="wow fadeInUp" data-wow-delay="0.2s">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">project</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <!-- Page Header Box End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+   
+    <div class="container cn mt-5">
+        <h1 class="section-title">Check out some <span>of Our</span> recent projects</h1>
+        
+        <div class="filter-cn">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Web Design</button>
+            <button class="filter-btn">App Development</button>
+            <!-- <button class="filter-btn">E-Commerce</button> -->
+            <button class="filter-btn">Custom Software</button>
+        </div>
+
+        <div class="row">
+            <!-- App Development Cards -->
+            <!-- Project Card 1 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                   <a href="project-single.html"><img src="images/bb.png" alt="BhoomiThe Real Estate" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">App Development</div>
+                        <h3 class="project-title">BhoomiThe Real Estate</h3>
+                        <p class="project-desc">We developed With smart search filters, you can narrow results by budget, property type and sizes.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.bhoomi.app.bhoomi_app" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 2 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                   <a href="project-single.html"> <img src="images/job.jpg" alt="Jobsworld" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">App Development</div>
+                        <h3 class="project-title">Jobsworld</h3>
+                        <p class="project-desc">A user-friendly Jobseeker App is a comprehensive platform designed to simplify the job search process.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.app.jobsworld" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 3 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="project-single.html"><img src="images/cab.jpg" alt="Delhi Parcel" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">App Development</div>
+                        <h3 class="project-title">EV Smart</h3>
+                        <p class="project-desc">We designed a modern and intuitive the User App that allows passengers to book rides, choose pickup and drop-off locations.</p>
+                        <a href="https://play.google.com/store/apps/details?id=hash.code.evsmart&pli=1" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 4 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="project-single.html"></a><img src="images/ld.png" alt="Ledger Book" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">App Development</div>
+                        <h3 class="project-title">Ledger Book</h3>
+                        <p class="project-desc">We design and develop customized Ledger Book applications to help small businesses and shop owners manage their customer credit.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5 - Additional App Development -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="project-single.html"><img src="images/b83e0179-7b0c-48bf-908c-05bae495853a.jpeg" alt="Fitness Tracker" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">App Development</div>
+                        <h3 class="project-title">News Paper</h3>
+                        <p class="project-desc"> The app mimics a real-world online newspaper, focusing on content organization, accessibility, and responsiveness.</p>
+                        <a href="https://play.google.com/store/apps/details?id=bhoomi.tech.voicetodaynews.webview_news" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Web Design Cards -->
+            <!-- Project Card 6 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="web.html"><img src="images/Untitled design (1).png" alt="Portfolio Website" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">Brolight Production</h3>
+                        <p class="project-desc">We Developed a responsive and modern website Brolight Production website, a video and photography studio.</p>
+                        <a href="https://brolightproduction.in/" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 7 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="web.html"><img src="images/Untitled design (2).png" alt="Corporate Website" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">Banke Bihari Sansthan Astrology</h3>
+                        <p class="project-desc">Developed a user-friendly astrology website for Banke Bihari Sansthan, focused on promoting their spiritual and astrological services.</p>
+                        <a href="https://shreebankebiharisansthan.in/" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 8 - Additional Web Design -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="web.html"><img src="images/Untitled design (3).png" alt="Restaurant Website" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">EaseToLoan</h3>
+                        <p class="project-desc">Built a responsive and lead-driven website for EaseToLoan, a platform that helps users compare.</p>
+                        <a href="https://easetoloan.com/" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 8 - Additional Web Design -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="web.html"><img src="images/9360e5f2-e91d-448d-8255-0aab49b2cc96.jpeg" alt="Fashion Boutique" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">EscapeQuest Trails LLP</h3>
+                        <p class="project-desc">Developed a dynamic website for EscapeQuest Trails LLP, an adventure travel company offering curated trekking, camping.</p>
+                        <a href="https://escapequestrails.com/" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 8 - Additional Web Design -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="web.html"><img src="images/kd.jpeg" alt="Restaurant Website" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">Visa Consulting Firm</h3>
+                        <p class="project-desc">GlobalPath Visa Consulting is a fictional but professional visa and immigration services company.</p>
+                        <a href="https://kdimmigrationservices.com/" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 8 - Additional Web Design -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="web.html"><img src="images/ss.png" alt="Restaurant Website" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">SkyMover</h3>
+                        <p class="project-desc">SkyMover is a fictional visa and immigration consultancy website I built to demonstrate my ability to create professional.</p>
+                        <a href="https://skymover.in/index.php" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 8 - Additional Web Design -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="web.html"><img src="images/Untitled design (4).png" alt="Restaurant Website" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">Red Pepper Films</h3>
+                        <p class="project-desc">Red Pepper Films is a fictional film production and creative media agency website.</p>
+                        <a href="https://redpepperfilms.in/our_project.php" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 8 - Additional Web Design -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="web.html"><img src="images/Untitled design (5).png" alt="Restaurant Website" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">GenNextMedia</h3>
+                        <p class="project-desc">GenNextMedia is a fictional solar energy company website We designed and built to showcase a clean, modern interface.</p>
+                        <a href="https://gennextmediagroup.com/" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 8 - Additional Web Design -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="web.html"><img src="images/ak.png" alt="Restaurant Website" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">Web Design</div>
+                        <h3 class="project-title">Ax4 Group</h3>
+                        <p class="project-desc">Built a responsive and lead-driven website for Ax4 Group, a platform that helps users compare.</p>
+                        <a href="https://ax4group.com/product.php" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- E-Commerce Cards -->
+            <!-- Project Card 9 -->
+            <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                   <a href="project-single.html"><img src="images/9360e5f2-e91d-448d-8255-0aab49b2cc96.jpeg" alt="Fashion Boutique" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">E-Commerce</div>
+                        <h3 class="project-title">Fashion Boutique</h3>
+                        <p class="project-desc">We developed a full-featured e-commerce platform with product catalog, secure payment integration, inventory management, and customer accounts for a fashion boutique.</p>
+                        <a href="" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+            
+            <!-- Project Card 10 - Additional E-Commerce -->
+            <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Electronics Store" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">E-Commerce</div>
+                        <h3 class="project-title">Electronics Store</h3>
+                        <p class="project-desc">A high-performance e-commerce store for electronics with advanced filtering, product comparisons, customer reviews, and streamlined checkout process to enhance user experience.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Project Card 10 - Additional E-Commerce -->
+            <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Electronics Store" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">E-Commerce</div>
+                        <h3 class="project-title">Electronics Store</h3>
+                        <p class="project-desc">A high-performance e-commerce store for electronics with advanced filtering, product comparisons, customer reviews, and streamlined checkout process to enhance user experience.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Project Card 10 - Additional E-Commerce -->
+            <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Electronics Store" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">E-Commerce</div>
+                        <h3 class="project-title">Electronics Store</h3>
+                        <p class="project-desc">A high-performance e-commerce store for electronics with advanced filtering, product comparisons, customer reviews, and streamlined checkout process to enhance user experience.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+            
+            <!-- Channel Cards -->
+            <!-- Project Card 11 -->
+            <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Tech Tips Channel" class="project-img">
+                    <div class="card-body">
+                        <div class="project-category">Custom Software</div>
+                        <h3 class="project-title">Tech Tips Channel</h3>
+                        <p class="project-desc">We designed and managed a YouTube channel for tech tutorials and reviews, creating engaging content, optimizing for SEO, and growing subscriber base through strategic promotion.</p>
+                        <a href="#" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+            
+            <!-- Project Card 12 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="project-card">
+                    <a href="soft.html"><img src="images/dp.png" alt="Marketing Hub" class="project-img"></a>
+                    <div class="card-body">
+                        <div class="project-category">Custom Software</div>
+                        <h3 class="project-title">Delhi Parcel</h3>
+                        <p class="project-desc">A user-friendly apps streamline logistics by connecting customers with local delivery partners or courier services.</p>
+                        <a href="https://delhiparcel.nilet.in/" class="view-project">
+                            View Project <i class="fas fa-arrow-right arrow-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <!-- Main Footer Section Start -->
+   <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Footer Header Start -->
+                <div class="footer-header">
+                    <!-- Footer Logo Start -->
+                    <div class="footer-logo">
+                        <img src="images/6786f6bb-39fb-467c-ac73-2af12742e326-removebg-preview (2).png" alt="">
+                    </div>
+                    <!-- Footer Logo End -->
+                    
+                    <!-- Footer Social Links Start -->
+                    <div class="footer-social-links">
+                        <ul>
+                            <li><a href="https://www.linkedin.com/company/bhoomitechzone/"><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a href="https://www.facebook.com/Bhoomitechzonepvt.ltd/"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/bhoomitechzone/"><i class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Social Links End -->
+                </div>
+                <!-- Footer Header End -->
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Footer Newsletter Form Start -->
+                <div class="footer-links footer-newsletter-form">
+                    <h3>Subscribe our newsletter:</h3>
+                    <p>Protecting networks, systems data from evolving. </p>
+                    <form id="newsletterForm" action="#" method="POST">
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" id="mail" placeholder="Enter Your Email" required="">
+                            <button type="submit" class="newsletter-btn"><i class="fa-regular fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Footer Newsletter Form End -->
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-6">
+                <!-- Footer Links Start -->
+                <div class="footer-links footer-quick-links">
+                    <h3>Quick link</h3>
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="about.html">about us</a></li>
+                        <li><a href="services.html">services</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Links End -->
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+                <!-- Footer Links Start -->
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="projects.html">Project</a></li>
+                        <li><a href="image-gallery.html">Gallery</a></li>
+                        <li><a href="index.html">Team</a></li>
+                        <li><a href="testimonials.html">Testimonial</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Links End -->
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+                <!-- Footer Links Start -->
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Help</a></li>
+                        <li><a href="about.html">Term's & condition </a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Links End -->
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+                <!-- Footer Links Start -->
+                <div class="footer-links">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="tel:+91 8130787194
+                            ">+91 8130787194
+                        </a></li>
+                        <li><a href="mailto:info@domain.com">info@bhoomitechzone.in</a></li>
+                        <li>A-43, Sector-63, Noida(201301)</li>
+                    </ul>
+                </div>
+                <!-- Footer Links End -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Copyright Start -->
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Footer Copyright Text Start -->
+                    <div class="footer-copyright-text">
+                        <p>© Copyright Bhoomi Techzone Pvt. Ltd. 2025 || All Rights Reserved.</p>
+                    </div>
+                    <!-- Footer Copyright Text End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Copyright End -->
+</footer>
+<!-- Main Footer Section End -->
+     <!-- Bootstrap JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+     <!-- Filter Functionality -->
+     <script>
+         document.addEventListener('DOMContentLoaded', function() {
+             // Get all filter buttons
+             const filterButtons = document.querySelectorAll('.filter-btn');
+             
+             // Set initial active state
+             const appDevButton = Array.from(filterButtons).find(btn => btn.textContent.trim() === 'All');
+             if (appDevButton) {
+                 appDevButton.classList.add('active');
+                 filterProjects('All');
+             }
+             
+             // Add click event to each filter button
+             filterButtons.forEach(button => {
+                 button.addEventListener('click', function() {
+                     // Remove active class from all buttons
+                     filterButtons.forEach(btn => btn.classList.remove('active'));
+                     
+                     // Add active class to clicked button
+                     this.classList.add('active');
+                     
+                     // Get filter value
+                     const filterValue = this.textContent.trim();
+                     
+                     // Filter projects
+                     filterProjects(filterValue);
+                 });
+             });
+             
+             // Function to filter projects
+             function filterProjects(filterValue) {
+                 // Get all project cards
+                 const projectCards = document.querySelectorAll('.project-card');
+                 
+                 projectCards.forEach(card => {
+                     const parent = card.closest('.col-lg-4');
+                     const category = card.querySelector('.project-category').textContent.trim();
+                     
+                     if (filterValue === 'All' || filterValue === category) {
+                         parent.style.display = 'block';
+                     } else {
+                         parent.style.display = 'none';
+                     }
+                 });
+             }
+             
+             // Initial filtering - show App Development by default
+             filterProjects('All');
+         });
+     </script>
+    <!-- Jquery Library File -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="js/SmoothScroll.js"></script>
+    <!-- Parallax js -->
+    <script src="js/parallaxie.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="js/SplitText.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <!-- YTPlayer js File -->
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    <!-- Wow js file -->
+    <script src="js/wow.min.js"></script>
+    <!-- Main Custom js file -->
+    <script src="js/function.js"></script>
+	<script src="../assets/js/theme-panel.js"></script>
+</body>
+</html>
